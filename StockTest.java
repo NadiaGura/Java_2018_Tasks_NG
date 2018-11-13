@@ -2,23 +2,32 @@ package lv.javaguru.demo;
 
 public class StockTest {
 
-    public static void main(String[] args) {
+    public void stockTest(){
+    Stock stock = new Stock("IBM", 150);
+    stock.updateValue(170);
+    double expected = 170;
+    double actual=stock.getMax();
 
-        StockTest IBM = new StockTest();
-        IBM.updatePrice();
+
+    if(expected==actual){
+        System.out.println("Should Update Price: OK");
 
     }
+    else {
+        System.out.println("Should Update Price: OK");
+    }
 
-    public void updatePrice() {
-        StockTest victim = new StockTest();
-        double currentValue = 150;
-        double firstChange = 151;
-        double lastChange = 145;
+    public void updateValue(double price);{
+        Stock stock = new Stock("IBM",150);
+        stock.updateValue(170);
+        double expected = 170;
+        double actual=stock.getMax();
 
-
-        System.out.println("Max Number: " + Math.max(firstChange, lastChange));
-        System.out.println("Min Number: " + Math.min(firstChange, lastChange));
-        System.out.println("Update Price: " + lastChange);
+        if(expected==actual){
+            System.out.println("Should update Price: OK");
+        }
+        else{System.out.println("Should update Price: Fail");
+        }
     }
 }
 
