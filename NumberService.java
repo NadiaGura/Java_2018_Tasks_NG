@@ -4,23 +4,20 @@ public class NumberService {
 
     int sumInRange(int from, int to) {
         int sum = 0;
-        while (from < to) {
-            System.out.println(from);
-            from++;
-            sum+=from;
-            continue;
+        for (int i = from; i < to; i++) {
+            sum += i;
         }
         return sum;
     }
 
-    int getEvenNumberCount(int from, int to) {
-        int getEvenNumberCounter = 0;
+    int evenNumberCounter(int from, int to) {
+        int evenNumberCount = 0;
         for (int i = from; i < to; i++) {
-            if (from % 2 == 0) {
-                getEvenNumberCounter++;
+            if (i % 2 == 0) {
+                evenNumberCount++;
             }
         }
-        return getEvenNumberCounter;
+        return evenNumberCount;
     }
 }
 
