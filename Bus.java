@@ -1,14 +1,13 @@
 package lv.javaguru.demo.Lesson8;
 
-public class Car {
-
-    public void material(){
-        System.out.println("Car is constructed from metal");
+public class Bus extends Car {
+    public void length (){
+        System.out.println("Bus is 5 meters long");
     }
 
     @Override
     public String toString() {
-        return "Car{}";
+        return "Bus{}";
     }
 
     @Override

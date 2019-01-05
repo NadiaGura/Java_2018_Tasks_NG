@@ -1,22 +1,31 @@
-package lv.javaguru.demo;
+package lv.javaguru.demo.Lesson8;
 
 public class CarTest {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.material();
 
-    public static void main (String []args){
+        PassengerCar passengerCar = new PassengerCar();
+        passengerCar.material();
 
-        Car firstCar = new Car();
-        firstCar.setBrand("Audi");
-        firstCar.setColor("Black");
-        firstCar.setYear(2018);
+        Truck truck = new Truck();
+        truck.material();
 
-        String carBrand = firstCar.getBrand();
-        String carColor = firstCar.getColor();
-        int carYear = firstCar.getYear();
+        Bus bus = new Bus();
+        bus.material();
 
-        System.out.println("Car brand is "+ carBrand);
-        System.out.println("Car color is "+ carColor);
-        System.out.println("Car year is "+ carYear);
+        System.out.println();
 
+        passengerCar.color();
+        truck.weight();
+        bus.length();
 
+        System.out.println();
+
+        Car[] cars = new Car[]{new PassengerCar(), new Truck(), new Bus()};
+
+        for (Car c : cars) {
+            c.material();
+        }
     }
 }
