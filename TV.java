@@ -1,33 +1,32 @@
-package lv.javaguru.demo;
+package lv.javaguru.demo.Lecture5;
 
 import java.util.Objects;
 
 public class TV {
-    public boolean turnedOn;
-    private int currentChannel;
-    private double currentVolumeLevel;
-    private double screenSize;
-    private String manufacturer;
 
+    private int currentChannel;
+    private int currentVolumeLevel;
+    private String manufacturer;
+    private int screenSize;
+    private boolean turnedOn;
+
+    public TV() {
+    }
+
+    public TV(boolean turnedOn, int currentChannel) {
+        this.currentChannel = currentChannel;
+        this.turnedOn = turnedOn;
+    }
 
     public boolean isTurnedOn() {
         return turnedOn;
     }
 
-    public void setTurnedOn(boolean turnedOn) {
-        this.turnedOn = turnedOn;
-    }
-
-    public void isTurnedOn
-
-    {
+    public void turnOn() {
         turnedOn = true;
-
     }
 
-    public void isTurnedOff
-
-    {
+    public void turnOff() {
         turnedOn = false;
     }
 
@@ -35,80 +34,61 @@ public class TV {
         return currentChannel;
     }
 
+    public int getCurrentVolumeLevel() {
+        return currentVolumeLevel;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getScreenSize() {
+        return screenSize;
+    }
+
     public void nextChannel() {
         if (isTurnedOn()) {
             currentChannel++;
         }
-        public void previousChannel() {
-            if (isTurnedOn()) {
-                currentChannel--;
-            }
-        }
-
     }
 
-    public void setManufacturer(String manufacturer) {
+    public void previousChannel() {
+        if (isTurnedOn()) {
+            currentChannel--;
+        }
+    }
+
+    public void setManufacturer() {
         this.manufacturer = manufacturer;
     }
 
-    public void setScreenSize(double screenSize) {
+    public void setScreenSize() {
         this.screenSize = screenSize;
     }
-
-    public void setCurrentVolumeLevel(double currentVolumeLevel) {
-        this.currentVolumeLevel = currentVolumeLevel;
-    }
-
-    public double getCurrentVolumeLevel() {
-        return currentVolumeLevel;
-    }
-
-    public double isCurrentVolumeLevel() {
-        return currentVolumeLevel;
-    }
-
-    public void increaseVolume() {
-        if (isTurnedOn()) {
-            currentVolumeLevel++;
-        }
-    }
-
-    public void decreaseVolume() {
-        if (isTurnedOn()) ;
-        {
-            currentVolumeLevel--;
-        }
-    }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TV tv = (TV) o;
-        return turnedOn == tv.turnedOn &&
-                currentChannel == tv.currentChannel &&
-                Double.compare(tv.currentVolumeLevel, currentVolumeLevel) == 0 &&
-                Double.compare(tv.screenSize, screenSize) == 0 &&
-                isTurnedOn == tv.isTurnedOn &&
-                isTurnedOff == tv.isTurnedOff &&
+        return currentChannel == tv.currentChannel &&
+                currentVolumeLevel == tv.currentVolumeLevel &&
+                screenSize == tv.screenSize &&
+                turnedOn == tv.turnedOn &&
                 Objects.equals(manufacturer, tv.manufacturer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(turnedOn, currentChannel, currentVolumeLevel, screenSize, manufacturer, isTurnedOn, isTurnedOff);
+        return Objects.hash(currentChannel, currentVolumeLevel, manufacturer, screenSize, turnedOn);
     }
+
     @Override
     public String toString() {
         return "TV{" +
-                "turnedOn=" + turnedOn +
-                ", currentChannel=" + currentChannel +
+                "currentChannel=" + currentChannel +
                 ", currentVolumeLevel=" + currentVolumeLevel +
-                ", screenSize=" + screenSize +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", isTurnedOn=" + isTurnedOn +
-                ", isTurnedOff=" + isTurnedOff +
-                '}';
+                ", turnedOn=" + turnedOn;
     }
 }
+
